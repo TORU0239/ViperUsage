@@ -12,3 +12,4 @@ B-VIPER Example Using Instagram Unofficial Api
 2. Retrofit2 and OkHttp3 Interceptor
 3. Gson
 4. Glide 4.2.0
+5. DataBinding
