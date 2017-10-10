@@ -10,4 +10,5 @@ B-VIPER Example Using Instagram Unofficial Api
 # Used Library
 1. RxJava2 and RxAndroid
 2. Retrofit2 and OkHttp3 Interceptor
-3. Glide 4.2.0
+3. Gson
+4. Glide 4.2.0
