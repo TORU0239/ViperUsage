@@ -4,7 +4,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.request.target.Target
+import kotlinx.android.synthetic.main.adapter_init.view.*
 import my.toru.kbviperusage.R
+import my.toru.kbviperusage.glide.GlideApp
 import my.toru.kbviperusage.model.response.InstagramItemModel
 
 /**
@@ -24,4 +27,12 @@ class MainInstaAdapter(var list:List<InstagramItemModel>) : RecyclerView.Adapter
 }
 
 class InstaViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-    fun bindData(data:InstagramItemModel){}
+    fun bindData(data:InstagramItemModel){
+        GlideApp.with(itemView)
+                .load(data.images.stdResolution.url)
+                .fitCenter()
+                .circleCrop()
+                .override(Target.SIZE_ORIGINAL)
+                .into(itemView.img_caption)
+    }
+}
