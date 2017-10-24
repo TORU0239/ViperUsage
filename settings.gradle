@@ -1,1 +1,1 @@
-include ':app', ':bviper'
+include ':app', ':bviper', ':kotlinapp'
