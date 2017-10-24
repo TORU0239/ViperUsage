@@ -3,8 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ViperUsage.iml" filepath="$PROJECT_DIR$/ViperUsage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViperUsage.iml" filepath="$PROJECT_DIR$/ViperUsage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/bviper/bviper.iml" filepath="$PROJECT_DIR$/bviper/bviper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bviper/bviper.iml" filepath="$PROJECT_DIR$/bviper/bviper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/daggerviperusage/daggerviperusage.iml" filepath="$PROJECT_DIR$/daggerviperusage/daggerviperusage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kotlinapp/kotlinapp.iml" filepath="$PROJECT_DIR$/kotlinapp/kotlinapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/kotlinapp/kotlinapp.iml" filepath="$PROJECT_DIR$/kotlinapp/kotlinapp.iml" />
     </modules>
   </component>
