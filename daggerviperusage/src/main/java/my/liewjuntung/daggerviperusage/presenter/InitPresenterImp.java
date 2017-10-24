@@ -4,7 +4,9 @@ import android.util.Log;
 
 import java.util.List;
 
-import my.liewjuntung.daggerviperusage.interactor.InitInteractorImp;
+import javax.inject.Inject;
+
+import my.liewjuntung.daggerviperusage.interactor.InitInteractor;
 import my.liewjuntung.daggerviperusage.interactor.InitInteractorOut;
 import my.liewjuntung.daggerviperusage.model.InstagramItemModel;
 import my.liewjuntung.daggerviperusage.network.services.RequestModel;
@@ -18,11 +20,17 @@ import my.liewjuntung.daggerviperusage.view.InitView;
 public class InitPresenterImp implements InitPresenter<RequestModel>, InitInteractorOut {
     private static final String TAG = InitPresenterImp.class.getSimpleName();
     private InitView view;
-    private InitInteractorImp interactorImp;
+    private InitInteractor interactor;
 
-    public InitPresenterImp(InitView v) {
-        view = v;
-        interactorImp = new InitInteractorImp(this);
+    /**
+     * interactor is injected from the outside
+     * @param view
+     * @param interactor
+     */
+    @Inject
+    public InitPresenterImp(InitView view, InitInteractor interactor) {
+        this.view = view;
+        this.interactor = interactor;
     }
 
     // handling LifeCycle
@@ -42,7 +50,7 @@ public class InitPresenterImp implements InitPresenter<RequestModel>, InitIntera
     @Override
     public void onUpdateStart(RequestModel requestModel) {
         Log.w(TAG, "onUpdateStart");
-        interactorImp.onGetResponse(requestModel);
+        interactor.onGetResponse(this, requestModel);
     }
 
     // View Update Part if successful
