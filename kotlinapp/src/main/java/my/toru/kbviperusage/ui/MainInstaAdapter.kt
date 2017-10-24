@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import my.toru.kbviperusage.R
-import my.toru.kbviperusage.model.response.InstagramModel
+import my.toru.kbviperusage.model.response.InstagramItemModel
 
 /**
  * Created by toruchoi on 24/10/2017.
  */
-class MainInstaAdapter(var list:List<InstagramModel>) : RecyclerView.Adapter<InstaViewHolder>() {
+class MainInstaAdapter(var list:List<InstagramItemModel>) : RecyclerView.Adapter<InstaViewHolder>() {
     override fun onBindViewHolder(holder: InstaViewHolder?, position: Int) {
         holder?.bindData(list.get(position))
     }
@@ -24,5 +24,4 @@ class MainInstaAdapter(var list:List<InstagramModel>) : RecyclerView.Adapter<Ins
 }
 
 class InstaViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-    fun bindData(data:InstagramModel){}
-}
+    fun bindData(data:InstagramItemModel){}

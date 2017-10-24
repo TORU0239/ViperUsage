@@ -12,7 +12,7 @@ import my.toru.kbviperusage.ui.MainInstaAdapter
 
 class MainActivity : AppCompatActivity(), MainView {
 
-    private val presenter:MainPresenterImp = MainPresenterImp()
+    private val presenter:MainPresenterImp = MainPresenterImp(MainActivity@this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
