@@ -1,7 +1,7 @@
 package my.toru.kbviperusage.mvp
 
 import my.toru.kbviperusage.model.requestmodel.RequestModel
-import my.toru.kbviperusage.model.response.InstagramModel
+import my.toru.kbviperusage.model.response.InstagramResponse
 import toru.io.my.bviper.interactor.BViperInteractor
 import toru.io.my.bviper.interactor.BViperInteractorOut
 
@@ -11,4 +11,4 @@ import toru.io.my.bviper.interactor.BViperInteractorOut
  */
 
 interface MainInteractor : BViperInteractor<RequestModel>
-interface MainInteractorOut : BViperInteractorOut<InstagramModel>
+interface MainInteractorOut : BViperInteractorOut<InstagramResponse>

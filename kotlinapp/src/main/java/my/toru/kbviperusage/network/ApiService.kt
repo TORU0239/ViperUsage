@@ -1,9 +1,7 @@
 package my.toru.kbviperusage.network
 
-import io.reactivex.Observable
 import io.reactivex.Single
-import my.toru.kbviperusage.model.requestmodel.RequestModel
-import my.toru.kbviperusage.model.response.InstagramModel
+import my.toru.kbviperusage.model.response.InstagramResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -12,7 +10,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-import retrofit2.http.QueryMap
 import java.util.concurrent.TimeUnit
 
 /**
@@ -44,5 +41,5 @@ object ApiService {
 interface IInstagramService{
     @GET("{filter}/media/")
     fun getInstagramPost(@Path("filter") filter:String,
-                         @Query("max_id") maxId:String):Single<InstagramModel>
+                         @Query("max_id") maxId:String):Single<InstagramResponse>
 }

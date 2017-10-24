@@ -13,7 +13,7 @@ class MainInteractorImp(val out:MainInteractorOut) : MainInteractor {
     override fun onGetResponse(request: RequestModel?) {
         val retrofit = ApiService.initRetrofit("https://www.instagram.com")
 
-        retrofit.create(IInstagramService::class.java).getInstagramPost(request!!.id, request!!.maxId)
+        retrofit.create(IInstagramService::class.java).getInstagramPost(request!!.id, request.maxId)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({ result -> out.onResponseSuccess(result)

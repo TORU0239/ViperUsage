@@ -1,12 +1,12 @@
 package my.toru.kbviperusage.mvp
 
 import my.toru.kbviperusage.model.requestmodel.RequestModel
-import my.toru.kbviperusage.model.response.InstagramModel
+import my.toru.kbviperusage.model.response.InstagramResponse
 
 /**
  * Created by toruchoi on 24/10/2017.
  */
-class MainPresenterImp : MainPresenter<RequestModel>{
+class MainPresenterImp(val view:MainView) : MainPresenter<RequestModel>{
     private val interactor = MainInteractorImp(MainInteractorOutImp())
 
     // for handling lifecycle of view. here, not used
@@ -25,7 +25,7 @@ class MainPresenterImp : MainPresenter<RequestModel>{
 }
 
 class MainInteractorOutImp : MainInteractorOut{
-    override fun onResponseFailed(throwable: Throwable?) {}
+    override fun onResponseSuccess(result: InstagramResponse?) {}
 
-    override fun onResponseSuccess(result: InstagramModel?) {}
+    override fun onResponseFailed(throwable: Throwable?) {}
 }
