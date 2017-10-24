@@ -6,10 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import dagger.android.AndroidInjection;
 import my.liewjuntung.daggerviperusage.R;
@@ -24,25 +24,30 @@ public class InitActivity extends AppCompatActivity implements InitView {
     private static final String TAG = InitActivity.class.getSimpleName();
     @Inject
     public InitPresenter<RequestModel> presenter;
+    // not really necessary to inject so many, just to demonstrate that it can be done like this.
+    // Just for lulz
+    @Inject
+    public InitViewAdapter adapter;
+    @Inject
+    public LinearLayoutManager layoutManager;
+    @Inject @Named("kevin")
+    public RequestModel model;
 
-    private ActivityInitBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        /* Inject this activity */
+        /* Inject this activity, the inject fields are initialized in this point */
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_init);
-
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_init);
-
+        // put AndroidInjection.inject(this); here if you want to inject ActivityInitBinding too.
+        ActivityInitBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_init);
         presenter.onCreate();
 
-        binding.initRecyclerview.setAdapter(new InitViewAdapter(new ArrayList<>()));
+        binding.initRecyclerview.setAdapter(adapter);
+        binding.initRecyclerview.setLayoutManager(layoutManager);
 
-        RequestModel model = new RequestModel();
-        model.id = "toru_0239";
-        model.maxId = "0";
         presenter.onUpdateStart(model);
     }
 
@@ -68,7 +73,6 @@ public class InitActivity extends AppCompatActivity implements InitView {
     @Override
     public void onUpdate(List<InstagramItemModel> result) {
         Log.w(TAG, "onUpdate, list size : " + result.size());
-        binding.initRecyclerview.setAdapter(new InitViewAdapter(result));
-        binding.initRecyclerview.setLayoutManager(new LinearLayoutManager(this));
+        adapter.setModelList(result);
     }
 }

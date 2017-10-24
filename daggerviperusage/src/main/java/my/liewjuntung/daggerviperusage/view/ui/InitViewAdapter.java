@@ -24,8 +24,9 @@ public class InitViewAdapter extends RecyclerView.Adapter<InitViewAdapter.InitVi
 
     private List<InstagramItemModel> modelList;
 
-    public InitViewAdapter(List<InstagramItemModel> list) {
-        modelList = list;
+    public void setModelList(List<InstagramItemModel> modelList) {
+        this.modelList = modelList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -45,6 +46,9 @@ public class InitViewAdapter extends RecyclerView.Adapter<InitViewAdapter.InitVi
 
     @Override
     public int getItemCount() {
+        if (modelList == null){
+            return 0;
+        }
         return modelList.size();
     }
 
