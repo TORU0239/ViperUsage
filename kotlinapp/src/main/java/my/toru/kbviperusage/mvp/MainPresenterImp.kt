@@ -7,10 +7,6 @@ import my.toru.kbviperusage.model.response.InstagramModel
  * Created by toruchoi on 24/10/2017.
  */
 class MainPresenterImp : MainPresenter<RequestModel>{
-    companion object {
-        val TAG : String? = MainPresenterImp::class.simpleName
-    }
-
     private val interactor = MainInteractorImp(MainInteractorOutImp())
 
     // for handling lifecycle of view. here, not used

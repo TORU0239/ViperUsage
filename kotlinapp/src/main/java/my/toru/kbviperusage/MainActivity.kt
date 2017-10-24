@@ -1,8 +1,7 @@
 package my.toru.kbviperusage
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_init.*
+import android.support.v7.app.AppCompatActivity
 import my.toru.kbviperusage.model.requestmodel.RequestModel
 import my.toru.kbviperusage.model.response.InstagramModel
 import my.toru.kbviperusage.mvp.MainPresenterImp

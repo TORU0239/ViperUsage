@@ -10,6 +10,8 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 import retrofit2.http.QueryMap
 import java.util.concurrent.TimeUnit
 
@@ -40,5 +42,7 @@ object ApiService {
 }
 
 interface IInstagramService{
-    @GET fun getInstagramPost(@QueryMap query:RequestModel): Single<InstagramModel>
+    @GET("{filter}/media/")
+    fun getInstagramPost(@Path("filter") filter:String,
+                         @Query("max_id") maxId:String):Single<InstagramModel>
 }
