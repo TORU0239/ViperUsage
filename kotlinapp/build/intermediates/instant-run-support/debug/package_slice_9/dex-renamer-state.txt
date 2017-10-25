@@ -1,0 +1,4 @@
+#Tue Oct 24 15:03:02 MYT 2017
+base.0=/Users/11street/Documents/work/Android/ViperUsage/kotlinapp/build/intermediates/transforms/dexMerger/debug/10
+renamed.0=classes.dex
+file.0=/Users/11street/Documents/work/Android/ViperUsage/kotlinapp/build/intermediates/transforms/dexMerger/debug/10/classes.dex
